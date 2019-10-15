@@ -1,5 +1,11 @@
+extern crate time;
+use time::PreciseTime;
+
 fn main() {
     println!("Hello, world!");
+
+    let start = PreciseTime::now();
+    // whatever you want to do
 
     let mut sum = 0;
     let max_num = 1000;
@@ -9,5 +15,7 @@ fn main() {
             sum += number;
         }
     }
-    println!("{}", sum)
+    println!("{}", sum);
+    let end = PreciseTime::now();
+    println!("{} seconds for whatever you did.", start.to(end));
 }
